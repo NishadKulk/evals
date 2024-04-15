@@ -37,6 +37,15 @@ coqa-closedqa-correct.dev.v0:
     modelgraded_spec_args:
       criteria: "correctness: Is the answer correct?"
 
+coqa-closedqa-marketing:
+  id: coqa-closedqa-marketing.dev.v0
+  metrics: [accuracy]
+coqa-closedqa-marketing.dev.v0:
+  class: evals.elsuite.modelgraded.classify:ModelBasedClassify
+  args:
+    samples_jsonl: coqa/samples.jsonl
+    modelgraded_spec: closedqa-marketing
+
 coqa-closedqa-relevance:
   id: coqa-closedqa-relevance.dev.v0
   metrics: [accuracy]

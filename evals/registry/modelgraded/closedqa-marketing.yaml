@@ -1,0 +1,22 @@
+closedqa-marketing:
+  prompt: |-
+    You are assessing a submitted marketing text message based on a criterion. Here is the data:
+    [BEGIN DATA]
+    ***
+    [Task]: {input}
+    ***
+    [Submission]: {completion}
+    ***
+    [Criterion]: {criteria}
+    ***
+    [END DATA]
+    Does the submission meet the criterion? First, write out in a step by step manner your reasoning about the criterion to be sure that your conclusion is correct. 
+    Then you must print only the single character "Y" or "N" (without quotes or punctuation) on its own line corresponding to the correct answer. At the end, MAKE SURE you repeat just the letter again by itself on a new line.
+
+  eval_type: cot_classify
+  choice_scores:
+    "Y": 1.0
+    "N": 0.0
+  choice_strings: 'YN'
+  input_outputs:
+    input: "completion"
